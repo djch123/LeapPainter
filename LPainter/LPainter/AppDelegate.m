@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LeapData.h"
 
 @interface AppDelegate ()
 
@@ -14,8 +15,12 @@
 
 @implementation AppDelegate
 
+@synthesize leapData = _leapData; // must retain for notifications
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    _leapData = [[LeapData alloc] init];
+    [_leapData run];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

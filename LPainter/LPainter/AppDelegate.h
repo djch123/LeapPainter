@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class LeapData;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (nonatomic, strong, readwrite)LeapData *leapData;
 
 @end
 
