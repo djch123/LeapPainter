@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PaperView.h
 //  LPainter
 //
 //  Created by Jessie Gao on 2/17/15.
@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
-
+@interface PaperView : NSView
 
 @end
-

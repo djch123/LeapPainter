@@ -51,9 +51,6 @@
     NSLog(@"Connected");
     LeapController *aController = (LeapController *)[notification object];
     [aController enableGesture:LEAP_GESTURE_TYPE_CIRCLE enable:YES];
-    [aController enableGesture:LEAP_GESTURE_TYPE_KEY_TAP enable:YES];
-    [aController enableGesture:LEAP_GESTURE_TYPE_SCREEN_TAP enable:YES];
-    [aController enableGesture:LEAP_GESTURE_TYPE_SWIPE enable:YES];
 }
 
 - (void)onDisconnect:(NSNotification *)notification
@@ -88,47 +85,16 @@
     
     // Get the most recent frame and report some basic information
     LeapFrame *frame = [aController frame:0];
-    
-    NSLog(@"Frame id: %lld, timestamp: %lld, hands: %ld, fingers: %ld, tools: %ld, gestures: %ld",
-          [frame id], [frame timestamp], [[frame hands] count],
-          [[frame fingers] count], [[frame tools] count], [[frame gestures:nil] count]);
-    
+
     // Get hands
     for (LeapHand *hand in frame.hands) {
-        NSString *handType = hand.isLeft ? @"Left hand" : @"Right hand";
-        NSLog(@"  %@, id: %i, palm position: %@",
-              handType, hand.id, hand.palmPosition);
-        
-        // Get the hand's normal vector and direction
-        const LeapVector *normal = [hand palmNormal];
-        const LeapVector *direction = [hand direction];
-        
-        // Calculate the hand's pitch, roll, and yaw angles
-        NSLog(@"  pitch: %f degrees, roll: %f degrees, yaw: %f degrees\n",
-              [direction pitch] * LEAP_RAD_TO_DEG,
-              [normal roll] * LEAP_RAD_TO_DEG,
-              [direction yaw] * LEAP_RAD_TO_DEG);
-        
-        // Get the Arm bone
-        LeapArm *arm = hand.arm;
-        NSLog(@"    Arm direction: %@, wrist position: %@, elbow position: %@", arm.direction, arm.wristPosition, arm.elbowPosition);
+        if (hand.isLeft) continue;
         
         for (LeapFinger *finger in hand.fingers) {
-            NSLog(@"    %@, id: %i, length: %fmm, width: %fmm",
-                  [fingerNames objectAtIndex:finger.type],
-                  finger.id, finger.length, finger.width);
-            
-            for (int boneType = LEAP_BONE_TYPE_METACARPAL; boneType <= LEAP_BONE_TYPE_DISTAL; boneType++) {
-                LeapBone *bone = [finger bone:boneType];
-                NSLog(@"      %@ bone, start: %@, end: %@, direction: %@",
-                      [boneNames objectAtIndex:boneType], bone.prevJoint, bone.nextJoint, bone.direction);
+            if ([[fingerNames objectAtIndex:finger.type]  isEqual: @"Index finger"]){
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapPositionChanged" object:[finger bone:LEAP_BONE_TYPE_DISTAL].nextJoint];
             }
         }
-    }
-    
-    for (LeapTool *tool in frame.tools) {
-        NSLog(@"  Tool, id: %i, position: %@, direction: %@",
-              tool.id, tool.tipPosition, tool.direction);
     }
     
     NSArray *gestures = [frame gestures:nil];
@@ -136,57 +102,13 @@
         LeapGesture *gesture = [gestures objectAtIndex:g];
         switch (gesture.type) {
             case LEAP_GESTURE_TYPE_CIRCLE: {
-                LeapCircleGesture *circleGesture = (LeapCircleGesture *)gesture;
-                
-                NSString *clockwiseness;
-                if ([[[circleGesture pointable] direction] angleTo:[circleGesture normal]] <= LEAP_PI/2) {
-                    clockwiseness = @"clockwise";
-                } else {
-                    clockwiseness = @"counterclockwise";
-                }
-                
-                // Calculate the angle swept since the last frame
-                float sweptAngle = 0;
-                if(circleGesture.state != LEAP_GESTURE_STATE_START) {
-                    LeapCircleGesture *previousUpdate = (LeapCircleGesture *)[[aController frame:1] gesture:gesture.id];
-                    sweptAngle = (circleGesture.progress - previousUpdate.progress) * 2 * LEAP_PI;
-                }
-                
-                NSLog(@"  Circle id: %d, %@, progress: %f, radius %f, angle: %f degrees %@",
-                      circleGesture.id, [LeapData stringForState:gesture.state],
-                      circleGesture.progress, circleGesture.radius,
-                      sweptAngle * LEAP_RAD_TO_DEG, clockwiseness);
-                break;
-            }
-            case LEAP_GESTURE_TYPE_SWIPE: {
-                LeapSwipeGesture *swipeGesture = (LeapSwipeGesture *)gesture;
-                NSLog(@"  Swipe id: %d, %@, position: %@, direction: %@, speed: %f",
-                      swipeGesture.id, [LeapData stringForState:swipeGesture.state],
-                      swipeGesture.position, swipeGesture.direction, swipeGesture.speed);
-                break;
-            }
-            case LEAP_GESTURE_TYPE_KEY_TAP: {
-                LeapKeyTapGesture *keyTapGesture = (LeapKeyTapGesture *)gesture;
-                NSLog(@"  Key Tap id: %d, %@, position: %@, direction: %@",
-                      keyTapGesture.id, [LeapData stringForState:keyTapGesture.state],
-                      keyTapGesture.position, keyTapGesture.direction);
-                break;
-            }
-            case LEAP_GESTURE_TYPE_SCREEN_TAP: {
-                LeapScreenTapGesture *screenTapGesture = (LeapScreenTapGesture *)gesture;
-                NSLog(@"  Screen Tap id: %d, %@, position: %@, direction: %@",
-                      screenTapGesture.id, [LeapData stringForState:screenTapGesture.state],
-                      screenTapGesture.position, screenTapGesture.direction);
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapCircleGesture" object:gesture];
                 break;
             }
             default:
                 NSLog(@"  Unknown gesture type");
                 break;
         }
-    }
-    
-    if (([[frame hands] count] > 0) || [[frame gestures:nil] count] > 0) {
-        NSLog(@" ");
     }
 }
 

@@ -11,6 +11,6 @@
 
 @interface LeapData : NSObject<LeapListener>
 
-- (void) run;
+-(void) run;
 
 @end

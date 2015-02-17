@@ -7,73 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40CFB0271A92DFFD00E1DFA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0261A92DFFD00E1DFA4 /* AppDelegate.m */; };
-		40CFB0291A92DFFD00E1DFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0281A92DFFD00E1DFA4 /* main.m */; };
-		40CFB02C1A92DFFD00E1DFA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB02B1A92DFFD00E1DFA4 /* ViewController.m */; };
-		40CFB02E1A92DFFD00E1DFA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CFB02D1A92DFFD00E1DFA4 /* Images.xcassets */; };
-		40CFB0311A92DFFD00E1DFA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CFB02F1A92DFFD00E1DFA4 /* Main.storyboard */; };
-		40CFB03D1A92DFFD00E1DFA4 /* LPainterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB03C1A92DFFD00E1DFA4 /* LPainterTests.m */; };
-		40CFB04D1A92E0CC00E1DFA4 /* LeapObjectiveC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB04B1A92E0CC00E1DFA4 /* LeapObjectiveC.mm */; };
-		40CFB0571A92E35300E1DFA4 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFB0561A92E35300E1DFA4 /* libLeap.dylib */; };
-		40CFB0581A92E35B00E1DFA4 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40CFB0561A92E35300E1DFA4 /* libLeap.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		40CFB05B1A92E62400E1DFA4 /* LeapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB05A1A92E62400E1DFA4 /* LeapData.m */; };
+		40CFB0B01A9375A300E1DFA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0AF1A9375A300E1DFA4 /* AppDelegate.m */; };
+		40CFB0B21A9375A300E1DFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0B11A9375A300E1DFA4 /* main.m */; };
+		40CFB0B41A9375A300E1DFA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CFB0B31A9375A300E1DFA4 /* Images.xcassets */; };
+		40CFB0B71A9375A300E1DFA4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40CFB0B51A9375A300E1DFA4 /* MainMenu.xib */; };
+		40CFB0C31A9375A300E1DFA4 /* LPainterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0C21A9375A300E1DFA4 /* LPainterTests.m */; };
+		40CFB0CF1A93767700E1DFA4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0CD1A93767700E1DFA4 /* MasterViewController.m */; };
+		40CFB0D01A93767700E1DFA4 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40CFB0CE1A93767700E1DFA4 /* MasterViewController.xib */; };
+		40CFB0D31A93770D00E1DFA4 /* PaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0D21A93770D00E1DFA4 /* PaperView.m */; };
+		40CFB0D61A937D0000E1DFA4 /* LeapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0D51A937D0000E1DFA4 /* LeapData.m */; };
+		40CFB0E71A937D3F00E1DFA4 /* LeapObjectiveC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0DC1A937D3F00E1DFA4 /* LeapObjectiveC.mm */; };
+		40CFB0E81A937D3F00E1DFA4 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */; };
+		40CFB0ED1A937D6100E1DFA4 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		40CFB0371A92DFFD00E1DFA4 /* PBXContainerItemProxy */ = {
+		40CFB0BD1A9375A300E1DFA4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 40CFB0181A92DFFD00E1DFA4 /* Project object */;
+			containerPortal = 40CFB0A11A9375A300E1DFA4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 40CFB01F1A92DFFD00E1DFA4;
+			remoteGlobalIDString = 40CFB0A81A9375A300E1DFA4;
 			remoteInfo = LPainter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		40CFB0501A92E21B00E1DFA4 /* CopyFiles */ = {
+		40CFB0EC1A937D5A00E1DFA4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				40CFB0581A92E35B00E1DFA4 /* libLeap.dylib in CopyFiles */,
+				40CFB0ED1A937D6100E1DFA4 /* libLeap.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		40CFB0201A92DFFD00E1DFA4 /* LPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40CFB0241A92DFFD00E1DFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40CFB0251A92DFFD00E1DFA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		40CFB0261A92DFFD00E1DFA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		40CFB0281A92DFFD00E1DFA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		40CFB02A1A92DFFD00E1DFA4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		40CFB02B1A92DFFD00E1DFA4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		40CFB02D1A92DFFD00E1DFA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		40CFB0301A92DFFD00E1DFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		40CFB0361A92DFFD00E1DFA4 /* LPainterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPainterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40CFB03B1A92DFFD00E1DFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40CFB03C1A92DFFD00E1DFA4 /* LPainterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPainterTests.m; sourceTree = "<group>"; };
-		40CFB0471A92E0CC00E1DFA4 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
-		40CFB0491A92E0CC00E1DFA4 /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
-		40CFB04A1A92E0CC00E1DFA4 /* LeapObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapObjectiveC.h; sourceTree = "<group>"; };
-		40CFB04B1A92E0CC00E1DFA4 /* LeapObjectiveC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LeapObjectiveC.mm; sourceTree = "<group>"; };
-		40CFB0561A92E35300E1DFA4 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libLeap.dylib; sourceTree = "<group>"; };
-		40CFB0591A92E62400E1DFA4 /* LeapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapData.h; sourceTree = "<group>"; };
-		40CFB05A1A92E62400E1DFA4 /* LeapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeapData.m; sourceTree = "<group>"; };
+		40CFB0A91A9375A300E1DFA4 /* LPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CFB0AD1A9375A300E1DFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CFB0AE1A9375A300E1DFA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40CFB0AF1A9375A300E1DFA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		40CFB0B11A9375A300E1DFA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40CFB0B31A9375A300E1DFA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		40CFB0B61A9375A300E1DFA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		40CFB0BC1A9375A300E1DFA4 /* LPainterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPainterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CFB0C11A9375A300E1DFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CFB0C21A9375A300E1DFA4 /* LPainterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPainterTests.m; sourceTree = "<group>"; };
+		40CFB0CC1A93767700E1DFA4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		40CFB0CD1A93767700E1DFA4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		40CFB0CE1A93767700E1DFA4 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		40CFB0D11A93770D00E1DFA4 /* PaperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperView.h; sourceTree = "<group>"; };
+		40CFB0D21A93770D00E1DFA4 /* PaperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperView.m; sourceTree = "<group>"; };
+		40CFB0D41A937D0000E1DFA4 /* LeapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapData.h; sourceTree = "<group>"; };
+		40CFB0D51A937D0000E1DFA4 /* LeapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeapData.m; sourceTree = "<group>"; };
+		40CFB0D81A937D3F00E1DFA4 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
+		40CFB0DA1A937D3F00E1DFA4 /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
+		40CFB0DB1A937D3F00E1DFA4 /* LeapObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapObjectiveC.h; sourceTree = "<group>"; };
+		40CFB0DC1A937D3F00E1DFA4 /* LeapObjectiveC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LeapObjectiveC.mm; sourceTree = "<group>"; };
+		40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libLeap.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		40CFB01D1A92DFFD00E1DFA4 /* Frameworks */ = {
+		40CFB0A61A9375A300E1DFA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CFB0571A92E35300E1DFA4 /* libLeap.dylib in Frameworks */,
+				40CFB0E81A937D3F00E1DFA4 /* libLeap.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40CFB0331A92DFFD00E1DFA4 /* Frameworks */ = {
+		40CFB0B91A9375A300E1DFA4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,83 +88,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40CFB0171A92DFFD00E1DFA4 = {
+		40CFB0A01A9375A300E1DFA4 = {
 			isa = PBXGroup;
 			children = (
-				40CFB0551A92E35300E1DFA4 /* lib */,
-				40CFB0461A92E0CC00E1DFA4 /* include */,
-				40CFB0221A92DFFD00E1DFA4 /* LPainter */,
-				40CFB0391A92DFFD00E1DFA4 /* LPainterTests */,
-				40CFB0211A92DFFD00E1DFA4 /* Products */,
+				40CFB0AB1A9375A300E1DFA4 /* LPainter */,
+				40CFB0BF1A9375A300E1DFA4 /* LPainterTests */,
+				40CFB0AA1A9375A300E1DFA4 /* Products */,
+				40CFB0D71A937D3F00E1DFA4 /* include */,
+				40CFB0DD1A937D3F00E1DFA4 /* lib */,
 			);
 			sourceTree = "<group>";
 		};
-		40CFB0211A92DFFD00E1DFA4 /* Products */ = {
+		40CFB0AA1A9375A300E1DFA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB0201A92DFFD00E1DFA4 /* LPainter.app */,
-				40CFB0361A92DFFD00E1DFA4 /* LPainterTests.xctest */,
+				40CFB0A91A9375A300E1DFA4 /* LPainter.app */,
+				40CFB0BC1A9375A300E1DFA4 /* LPainterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		40CFB0221A92DFFD00E1DFA4 /* LPainter */ = {
+		40CFB0AB1A9375A300E1DFA4 /* LPainter */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB0251A92DFFD00E1DFA4 /* AppDelegate.h */,
-				40CFB0261A92DFFD00E1DFA4 /* AppDelegate.m */,
-				40CFB02A1A92DFFD00E1DFA4 /* ViewController.h */,
-				40CFB02B1A92DFFD00E1DFA4 /* ViewController.m */,
-				40CFB02D1A92DFFD00E1DFA4 /* Images.xcassets */,
-				40CFB02F1A92DFFD00E1DFA4 /* Main.storyboard */,
-				40CFB0231A92DFFD00E1DFA4 /* Supporting Files */,
-				40CFB0591A92E62400E1DFA4 /* LeapData.h */,
-				40CFB05A1A92E62400E1DFA4 /* LeapData.m */,
+				40CFB0AE1A9375A300E1DFA4 /* AppDelegate.h */,
+				40CFB0AF1A9375A300E1DFA4 /* AppDelegate.m */,
+				40CFB0CC1A93767700E1DFA4 /* MasterViewController.h */,
+				40CFB0CD1A93767700E1DFA4 /* MasterViewController.m */,
+				40CFB0CE1A93767700E1DFA4 /* MasterViewController.xib */,
+				40CFB0D41A937D0000E1DFA4 /* LeapData.h */,
+				40CFB0D51A937D0000E1DFA4 /* LeapData.m */,
+				40CFB0D11A93770D00E1DFA4 /* PaperView.h */,
+				40CFB0D21A93770D00E1DFA4 /* PaperView.m */,
+				40CFB0B31A9375A300E1DFA4 /* Images.xcassets */,
+				40CFB0B51A9375A300E1DFA4 /* MainMenu.xib */,
+				40CFB0AC1A9375A300E1DFA4 /* Supporting Files */,
 			);
 			path = LPainter;
 			sourceTree = "<group>";
 		};
-		40CFB0231A92DFFD00E1DFA4 /* Supporting Files */ = {
+		40CFB0AC1A9375A300E1DFA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB0241A92DFFD00E1DFA4 /* Info.plist */,
-				40CFB0281A92DFFD00E1DFA4 /* main.m */,
+				40CFB0AD1A9375A300E1DFA4 /* Info.plist */,
+				40CFB0B11A9375A300E1DFA4 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		40CFB0391A92DFFD00E1DFA4 /* LPainterTests */ = {
+		40CFB0BF1A9375A300E1DFA4 /* LPainterTests */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB03C1A92DFFD00E1DFA4 /* LPainterTests.m */,
-				40CFB03A1A92DFFD00E1DFA4 /* Supporting Files */,
+				40CFB0C21A9375A300E1DFA4 /* LPainterTests.m */,
+				40CFB0C01A9375A300E1DFA4 /* Supporting Files */,
 			);
 			path = LPainterTests;
 			sourceTree = "<group>";
 		};
-		40CFB03A1A92DFFD00E1DFA4 /* Supporting Files */ = {
+		40CFB0C01A9375A300E1DFA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB03B1A92DFFD00E1DFA4 /* Info.plist */,
+				40CFB0C11A9375A300E1DFA4 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		40CFB0461A92E0CC00E1DFA4 /* include */ = {
+		40CFB0D71A937D3F00E1DFA4 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB0471A92E0CC00E1DFA4 /* Leap.h */,
-				40CFB0491A92E0CC00E1DFA4 /* LeapMath.h */,
-				40CFB04A1A92E0CC00E1DFA4 /* LeapObjectiveC.h */,
-				40CFB04B1A92E0CC00E1DFA4 /* LeapObjectiveC.mm */,
+				40CFB0D81A937D3F00E1DFA4 /* Leap.h */,
+				40CFB0DA1A937D3F00E1DFA4 /* LeapMath.h */,
+				40CFB0DB1A937D3F00E1DFA4 /* LeapObjectiveC.h */,
+				40CFB0DC1A937D3F00E1DFA4 /* LeapObjectiveC.mm */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		40CFB0551A92E35300E1DFA4 /* lib */ = {
+		40CFB0DD1A937D3F00E1DFA4 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				40CFB0561A92E35300E1DFA4 /* libLeap.dylib */,
+				40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -167,14 +175,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40CFB01F1A92DFFD00E1DFA4 /* LPainter */ = {
+		40CFB0A81A9375A300E1DFA4 /* LPainter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40CFB0401A92DFFD00E1DFA4 /* Build configuration list for PBXNativeTarget "LPainter" */;
+			buildConfigurationList = 40CFB0C61A9375A300E1DFA4 /* Build configuration list for PBXNativeTarget "LPainter" */;
 			buildPhases = (
-				40CFB01C1A92DFFD00E1DFA4 /* Sources */,
-				40CFB01D1A92DFFD00E1DFA4 /* Frameworks */,
-				40CFB01E1A92DFFD00E1DFA4 /* Resources */,
-				40CFB0501A92E21B00E1DFA4 /* CopyFiles */,
+				40CFB0A51A9375A300E1DFA4 /* Sources */,
+				40CFB0A61A9375A300E1DFA4 /* Frameworks */,
+				40CFB0A71A9375A300E1DFA4 /* Resources */,
+				40CFB0EC1A937D5A00E1DFA4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -182,46 +190,46 @@
 			);
 			name = LPainter;
 			productName = LPainter;
-			productReference = 40CFB0201A92DFFD00E1DFA4 /* LPainter.app */;
+			productReference = 40CFB0A91A9375A300E1DFA4 /* LPainter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		40CFB0351A92DFFD00E1DFA4 /* LPainterTests */ = {
+		40CFB0BB1A9375A300E1DFA4 /* LPainterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40CFB0431A92DFFD00E1DFA4 /* Build configuration list for PBXNativeTarget "LPainterTests" */;
+			buildConfigurationList = 40CFB0C91A9375A300E1DFA4 /* Build configuration list for PBXNativeTarget "LPainterTests" */;
 			buildPhases = (
-				40CFB0321A92DFFD00E1DFA4 /* Sources */,
-				40CFB0331A92DFFD00E1DFA4 /* Frameworks */,
-				40CFB0341A92DFFD00E1DFA4 /* Resources */,
+				40CFB0B81A9375A300E1DFA4 /* Sources */,
+				40CFB0B91A9375A300E1DFA4 /* Frameworks */,
+				40CFB0BA1A9375A300E1DFA4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				40CFB0381A92DFFD00E1DFA4 /* PBXTargetDependency */,
+				40CFB0BE1A9375A300E1DFA4 /* PBXTargetDependency */,
 			);
 			name = LPainterTests;
 			productName = LPainterTests;
-			productReference = 40CFB0361A92DFFD00E1DFA4 /* LPainterTests.xctest */;
+			productReference = 40CFB0BC1A9375A300E1DFA4 /* LPainterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		40CFB0181A92DFFD00E1DFA4 /* Project object */ = {
+		40CFB0A11A9375A300E1DFA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = jessie;
 				TargetAttributes = {
-					40CFB01F1A92DFFD00E1DFA4 = {
+					40CFB0A81A9375A300E1DFA4 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					40CFB0351A92DFFD00E1DFA4 = {
+					40CFB0BB1A9375A300E1DFA4 = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 40CFB01F1A92DFFD00E1DFA4;
+						TestTargetID = 40CFB0A81A9375A300E1DFA4;
 					};
 				};
 			};
-			buildConfigurationList = 40CFB01B1A92DFFD00E1DFA4 /* Build configuration list for PBXProject "LPainter" */;
+			buildConfigurationList = 40CFB0A41A9375A300E1DFA4 /* Build configuration list for PBXProject "LPainter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -229,28 +237,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 40CFB0171A92DFFD00E1DFA4;
-			productRefGroup = 40CFB0211A92DFFD00E1DFA4 /* Products */;
+			mainGroup = 40CFB0A01A9375A300E1DFA4;
+			productRefGroup = 40CFB0AA1A9375A300E1DFA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				40CFB01F1A92DFFD00E1DFA4 /* LPainter */,
-				40CFB0351A92DFFD00E1DFA4 /* LPainterTests */,
+				40CFB0A81A9375A300E1DFA4 /* LPainter */,
+				40CFB0BB1A9375A300E1DFA4 /* LPainterTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		40CFB01E1A92DFFD00E1DFA4 /* Resources */ = {
+		40CFB0A71A9375A300E1DFA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CFB02E1A92DFFD00E1DFA4 /* Images.xcassets in Resources */,
-				40CFB0311A92DFFD00E1DFA4 /* Main.storyboard in Resources */,
+				40CFB0B41A9375A300E1DFA4 /* Images.xcassets in Resources */,
+				40CFB0B71A9375A300E1DFA4 /* MainMenu.xib in Resources */,
+				40CFB0D01A93767700E1DFA4 /* MasterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40CFB0341A92DFFD00E1DFA4 /* Resources */ = {
+		40CFB0BA1A9375A300E1DFA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,49 +269,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		40CFB01C1A92DFFD00E1DFA4 /* Sources */ = {
+		40CFB0A51A9375A300E1DFA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CFB05B1A92E62400E1DFA4 /* LeapData.m in Sources */,
-				40CFB02C1A92DFFD00E1DFA4 /* ViewController.m in Sources */,
-				40CFB0291A92DFFD00E1DFA4 /* main.m in Sources */,
-				40CFB04D1A92E0CC00E1DFA4 /* LeapObjectiveC.mm in Sources */,
-				40CFB0271A92DFFD00E1DFA4 /* AppDelegate.m in Sources */,
+				40CFB0D61A937D0000E1DFA4 /* LeapData.m in Sources */,
+				40CFB0E71A937D3F00E1DFA4 /* LeapObjectiveC.mm in Sources */,
+				40CFB0B21A9375A300E1DFA4 /* main.m in Sources */,
+				40CFB0D31A93770D00E1DFA4 /* PaperView.m in Sources */,
+				40CFB0CF1A93767700E1DFA4 /* MasterViewController.m in Sources */,
+				40CFB0B01A9375A300E1DFA4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40CFB0321A92DFFD00E1DFA4 /* Sources */ = {
+		40CFB0B81A9375A300E1DFA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CFB03D1A92DFFD00E1DFA4 /* LPainterTests.m in Sources */,
+				40CFB0C31A9375A300E1DFA4 /* LPainterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		40CFB0381A92DFFD00E1DFA4 /* PBXTargetDependency */ = {
+		40CFB0BE1A9375A300E1DFA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 40CFB01F1A92DFFD00E1DFA4 /* LPainter */;
-			targetProxy = 40CFB0371A92DFFD00E1DFA4 /* PBXContainerItemProxy */;
+			target = 40CFB0A81A9375A300E1DFA4 /* LPainter */;
+			targetProxy = 40CFB0BD1A9375A300E1DFA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40CFB02F1A92DFFD00E1DFA4 /* Main.storyboard */ = {
+		40CFB0B51A9375A300E1DFA4 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				40CFB0301A92DFFD00E1DFA4 /* Base */,
+				40CFB0B61A9375A300E1DFA4 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		40CFB03E1A92DFFD00E1DFA4 /* Debug */ = {
+		40CFB0C41A9375A300E1DFA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,7 +353,7 @@
 			};
 			name = Debug;
 		};
-		40CFB03F1A92DFFD00E1DFA4 /* Release */ = {
+		40CFB0C51A9375A300E1DFA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,7 +388,7 @@
 			};
 			name = Release;
 		};
-		40CFB0411A92DFFD00E1DFA4 /* Debug */ = {
+		40CFB0C71A9375A300E1DFA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -388,13 +398,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
-					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		40CFB0421A92DFFD00E1DFA4 /* Release */ = {
+		40CFB0C81A9375A300E1DFA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -404,13 +413,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
-					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		40CFB0441A92DFFD00E1DFA4 /* Debug */ = {
+		40CFB0CA1A9375A300E1DFA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -430,7 +438,7 @@
 			};
 			name = Debug;
 		};
-		40CFB0451A92DFFD00E1DFA4 /* Release */ = {
+		40CFB0CB1A9375A300E1DFA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -449,32 +457,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		40CFB01B1A92DFFD00E1DFA4 /* Build configuration list for PBXProject "LPainter" */ = {
+		40CFB0A41A9375A300E1DFA4 /* Build configuration list for PBXProject "LPainter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40CFB03E1A92DFFD00E1DFA4 /* Debug */,
-				40CFB03F1A92DFFD00E1DFA4 /* Release */,
+				40CFB0C41A9375A300E1DFA4 /* Debug */,
+				40CFB0C51A9375A300E1DFA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40CFB0401A92DFFD00E1DFA4 /* Build configuration list for PBXNativeTarget "LPainter" */ = {
+		40CFB0C61A9375A300E1DFA4 /* Build configuration list for PBXNativeTarget "LPainter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40CFB0411A92DFFD00E1DFA4 /* Debug */,
-				40CFB0421A92DFFD00E1DFA4 /* Release */,
+				40CFB0C71A9375A300E1DFA4 /* Debug */,
+				40CFB0C81A9375A300E1DFA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		40CFB0431A92DFFD00E1DFA4 /* Build configuration list for PBXNativeTarget "LPainterTests" */ = {
+		40CFB0C91A9375A300E1DFA4 /* Build configuration list for PBXNativeTarget "LPainterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40CFB0441A92DFFD00E1DFA4 /* Debug */,
-				40CFB0451A92DFFD00E1DFA4 /* Release */,
+				40CFB0CA1A9375A300E1DFA4 /* Debug */,
+				40CFB0CB1A9375A300E1DFA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 40CFB0181A92DFFD00E1DFA4 /* Project object */;
+	rootObject = 40CFB0A11A9375A300E1DFA4 /* Project object */;
 }

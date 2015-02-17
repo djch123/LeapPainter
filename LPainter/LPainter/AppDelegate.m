@@ -7,20 +7,31 @@
 //
 
 #import "AppDelegate.h"
+#import "MasterViewController.h"
 #import "LeapData.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong, readwrite)IBOutlet NSWindow *window;
+@property (nonatomic,strong) IBOutlet MasterViewController *masterViewController;
 
 @end
 
 @implementation AppDelegate
 
-@synthesize leapData = _leapData; // must retain for notifications
+@synthesize leapData = _leapData;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    // 1. Create the master View Controller
+    self.masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
+    
+    // 2. Add the view controller to the Window's content view
+    [self.window.contentView addSubview:self.masterViewController.view];
+    self.masterViewController.view.frame = ((NSView*)self.window.contentView).bounds;
+    
     _leapData = [[LeapData alloc] init];
-    [_leapData run];
+    [_leapData run];    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

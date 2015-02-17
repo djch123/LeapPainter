@@ -12,7 +12,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong, readwrite)LeapData *leapData;
+@property (nonatomic, strong, readwrite)LeapData* leapData;
 
 @end
 
