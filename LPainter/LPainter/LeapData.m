@@ -35,7 +35,8 @@
 {
     controller = [[LeapController alloc] init];
     [controller addListener:self];
-    NSLog(@"running");
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"running"];
 }
 
 
@@ -43,12 +44,12 @@
 
 - (void)onInit:(NSNotification *)notification
 {
-    NSLog(@"Initialized");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Initialized"];
 }
 
 - (void)onConnect:(NSNotification *)notification
 {
-    NSLog(@"Connected");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Connected"];
     LeapController *aController = (LeapController *)[notification object];
     [aController enableGesture:LEAP_GESTURE_TYPE_CIRCLE enable:YES];
 }
@@ -56,27 +57,27 @@
 - (void)onDisconnect:(NSNotification *)notification
 {
     //Note: not dispatched when running in a debugger.
-    NSLog(@"Disconnected");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Disconnected"];
 }
 
 - (void)onServiceConnect:(NSNotification *)notification
 {
-    NSLog(@"Service Connected");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Service Connected"];
 }
 
 - (void)onServiceDisconnect:(NSNotification *)notification
 {
-    NSLog(@"Service Disconnected");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Service Disconnected"];
 }
 
 - (void)onDeviceChange:(NSNotification *)notification
 {
-    NSLog(@"Device Changed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Device Changed"];
 }
 
 - (void)onExit:(NSNotification *)notification
 {
-    NSLog(@"Exited");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Exited"];
 }
 
 - (void)onFrame:(NSNotification *)notification
@@ -85,6 +86,7 @@
     
     // Get the most recent frame and report some basic information
     LeapFrame *frame = [aController frame:0];
+    LeapInteractionBox *iBox = frame.interactionBox;
 
     // Get hands
     for (LeapHand *hand in frame.hands) {
@@ -92,7 +94,11 @@
         
         for (LeapFinger *finger in hand.fingers) {
             if ([[fingerNames objectAtIndex:finger.type]  isEqual: @"Index finger"]){
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapPositionChanged" object:[finger bone:LEAP_BONE_TYPE_DISTAL].nextJoint];
+                LeapVector *leapPoint = [finger bone:LEAP_BONE_TYPE_DISTAL].nextJoint;
+                
+                LeapVector *normalizedPoint = [iBox normalizePoint:leapPoint clamp:YES];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapPositionChanged" object:normalizedPoint];
             }
         }
     }
@@ -102,7 +108,15 @@
         LeapGesture *gesture = [gestures objectAtIndex:g];
         switch (gesture.type) {
             case LEAP_GESTURE_TYPE_CIRCLE: {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapCircleGesture" object:gesture];
+                LeapCircleGesture *circleGesture = (LeapCircleGesture *)gesture;
+                LeapVector *center = [circleGesture center];
+                LeapVector *normalizedCenter = [iBox normalizePoint:center clamp:YES];
+                NSMutableArray *message;
+                message = [[NSMutableArray alloc] init];
+                [message addObject:gesture];
+                [message addObject:normalizedCenter];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"leapCircleGesture" object:message];
                 break;
             }
             default:
@@ -114,12 +128,12 @@
 
 - (void)onFocusGained:(NSNotification *)notification
 {
-    NSLog(@"Focus Gained");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Focus Gained"];
 }
 
 - (void)onFocusLost:(NSNotification *)notification
 {
-    NSLog(@"Focus Lost");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Focus Lost"];
 }
 
 + (NSString *)stringForState:(LeapGestureState)state

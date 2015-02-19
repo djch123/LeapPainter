@@ -7,7 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "LeapObjectiveC.h"
 
-@interface PaperView : NSView
+@interface PaperView : NSView{
+    NSMutableArray *lines;
+    
+    NSColor *nowColor;
+    NSNumber *nowWidth;
+    LeapVector *lastPosition;
+}
+
+- (void) addPoint:(LeapVector*) position;
+- (void) colorChanged:(NSColor*) color;
+- (void) widthChanged:(NSNumber*) width;
 
 @end

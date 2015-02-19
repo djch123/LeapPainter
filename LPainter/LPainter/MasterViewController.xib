@@ -17,10 +17,97 @@
             <subviews>
                 <customView id="hko-4b-Kjk" customClass="PaperView">
                     <rect key="frame" x="150" y="10" width="560" height="460"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <shadow key="shadow" blurRadius="8">
                         <color key="color" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                     </shadow>
+                </customView>
+                <customView id="qfk-Al-L2O" customClass="PenView">
+                    <rect key="frame" x="80" y="10" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <shadow key="shadow" blurRadius="10">
+                        <color key="color" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                    </shadow>
+                </customView>
+                <colorWell id="KK6-u5-VoI" userLabel="Black" customClass="ColorView">
+                    <rect key="frame" x="5" y="410" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="hEs-7R-gjy" userLabel="Blue" customClass="ColorView">
+                    <rect key="frame" x="70" y="410" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="2kG-Ce-rk9" userLabel="Brown" customClass="ColorView">
+                    <rect key="frame" x="5" y="345" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="oT2-Dl-6cX" userLabel="Cyan" customClass="ColorView">
+                    <rect key="frame" x="70" y="345" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="evB-4G-1Qd" userLabel="Green" customClass="ColorView">
+                    <rect key="frame" x="5" y="280" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="IY5-tv-ZZi" userLabel="Magenta" customClass="ColorView">
+                    <rect key="frame" x="70" y="280" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="BVk-eb-dRz" userLabel="Orange" customClass="ColorView">
+                    <rect key="frame" x="5" y="215" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="KcK-7q-SzG" userLabel="Purple" customClass="ColorView">
+                    <rect key="frame" x="70" y="215" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="pbo-2K-ZQu" userLabel="Red" customClass="ColorView">
+                    <rect key="frame" x="5" y="150" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="G7D-JU-tVK" userLabel="Yellow" customClass="ColorView">
+                    <rect key="frame" x="70" y="150" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <colorWell id="LbT-Za-TLm" userLabel="White" customClass="ColorView">
+                    <rect key="frame" x="5" y="85" width="60" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="AnW-49-2cO" customClass="StateTextField">
+                    <rect key="frame" x="570" y="440" width="140" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <shadow key="shadow" blurRadius="10">
+                        <color key="color" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </shadow>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Init..." id="goS-mx-vE9">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3KX-4c-dy3">
+                    <rect key="frame" x="25" y="19" width="49" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Pen:" usesSingleLineMode="YES" id="z7a-Lq-CrC">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView wantsLayer="YES" id="H01-hM-Ru6" customClass="MouseView">
+                    <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </customView>
             </subviews>
         </customView>
