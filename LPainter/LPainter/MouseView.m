@@ -46,12 +46,29 @@
     path2 = [NSBezierPath bezierPath];
     
     [[NSColor whiteColor] set];
-    [path2 appendBezierPathWithArcWithCenter:center radius:[nowWidth floatValue]/2+1 startAngle:0 endAngle:360];
+    [path2 appendBezierPathWithArcWithCenter:center radius:[nowWidth floatValue]/2+.5 startAngle:0 endAngle:360];
     [path2 stroke];
+    
+    NSBezierPath *path3;  // huge gray circle with unfixed size
+    path3 = [NSBezierPath bezierPath];
+    
+    [[NSColor grayColor] set];
+    [path3 appendBezierPathWithArcWithCenter:center radius:[self getHugeCircleRadius] startAngle:0 endAngle:360];
+    [path3 stroke];
 }
 
 - (void) leapMouseMoved:(LeapVector*) position{
     mouse = position;
+    
+    // alpha
+    CGFloat alpha;
+    CGFloat z;
+    
+    z = [mouse z];
+    if (z<=.5) alpha = 1;
+    else alpha = 1 - (z-.5)*2;
+    
+    nowColor = [nowColor colorWithAlphaComponent:alpha];
     [self setNeedsDisplay:YES];
 }
 
@@ -66,4 +83,10 @@
     [self setNeedsDisplay:YES];
 }
 
+- (CGFloat) getHugeCircleRadius {
+    CGFloat z;
+    z = [mouse z];
+    if (z<=0.5) return [nowWidth floatValue]/2 + 1 + (-z+.5)*3*[nowWidth floatValue];
+    return [nowWidth floatValue]/2 + 1 + (z-.5)*3*[nowWidth floatValue];
+}
 @end

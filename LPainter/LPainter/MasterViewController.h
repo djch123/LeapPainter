@@ -19,6 +19,7 @@
 #define PROGRESS_TO_WIDTH_CONSTANT (.02)
 #define DEFAULT_COLOR blackColor
 #define DEFAULT_MOUSE_ALPHA (.5)
+#define OUT_OF_RANGE_BOUND (.001)
 
 @interface MasterViewController : NSViewController{
     PaperView* paperView;

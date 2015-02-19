@@ -18,5 +18,6 @@
 - (void) colorChanged:(NSColor*) color;
 - (void) widthChanged:(NSNumber*) width;
 - (void) leapMouseMoved:(LeapVector*) position;
+- (CGFloat) getHugeCircleRadius;
 
 @end

@@ -54,9 +54,12 @@
 
 - (void) leapPositionChanged:(NSNotification*) notification{
     LeapVector *position = notification.object; // normalized coordinate
-    if ([position x]<.001 || [position x]>.999 ||
-        [position y]<.001 || [position y]>.999 ||
-        [position z]<.001 || [position z]>.999) {
+    if ([position x]<OUT_OF_RANGE_BOUND ||
+        [position x]>(1-OUT_OF_RANGE_BOUND) ||
+        [position y]<OUT_OF_RANGE_BOUND ||
+        [position y]>(1-OUT_OF_RANGE_BOUND) ||
+        [position z]<OUT_OF_RANGE_BOUND ||
+        [position z]>(1-OUT_OF_RANGE_BOUND)) {
         [mouseView leapMouseMoved:nil];
         [paperView addPoint:nil];
         return;
@@ -131,6 +134,13 @@
         point = [self.view convertPoint:c toView:colorView];
         if (CGRectContainsPoint(colorView.bounds, point)){
             NSColor *color = [colorView color];
+            
+            if ([colorView.identifier isEqualToString:@"white"]) {
+                if ([[[circleGesture pointable] direction] angleTo:[circleGesture normal]] > LEAP_PI/2) {
+                    [paperView clear];
+                    return;
+                }
+            }
             
             // send new color to penView, MouseView, PaperView
             [penView colorChanged:color];

@@ -20,5 +20,6 @@
 - (void) addPoint:(LeapVector*) position;
 - (void) colorChanged:(NSColor*) color;
 - (void) widthChanged:(NSNumber*) width;
+- (void) clear;
 
 @end

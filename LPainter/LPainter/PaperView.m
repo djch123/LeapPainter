@@ -117,4 +117,12 @@
     [self setNeedsDisplay:YES];
 }
 
+- (void) clear {
+    [lines removeAllObjects];
+    [nowLine removeAllObjects];
+    nowLine = nil;
+    
+    [self setNeedsDisplay:YES];
+}
+
 @end
