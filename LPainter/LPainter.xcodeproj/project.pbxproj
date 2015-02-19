@@ -105,9 +105,9 @@
 			children = (
 				40CFB0AB1A9375A300E1DFA4 /* LPainter */,
 				40CFB0BF1A9375A300E1DFA4 /* LPainterTests */,
-				40CFB0AA1A9375A300E1DFA4 /* Products */,
 				40CFB0D71A937D3F00E1DFA4 /* include */,
 				40CFB0DD1A937D3F00E1DFA4 /* lib */,
+				40CFB0AA1A9375A300E1DFA4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};

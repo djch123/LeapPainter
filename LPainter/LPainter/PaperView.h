@@ -11,10 +11,10 @@
 
 @interface PaperView : NSView{
     NSMutableArray *lines;
+    NSMutableArray *nowLine;
     
     NSColor *nowColor;
     NSNumber *nowWidth;
-    LeapVector *lastPosition;
 }
 
 - (void) addPoint:(LeapVector*) position;
