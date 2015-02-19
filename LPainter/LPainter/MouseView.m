@@ -66,7 +66,7 @@
     
     z = [mouse z];
     if (z<=.5) alpha = 1;
-    else alpha = 1 - (z-.5)*2;
+    else alpha = 1 - (z-.5)*1.3;
     
     nowColor = [nowColor colorWithAlphaComponent:alpha];
     [self setNeedsDisplay:YES];
