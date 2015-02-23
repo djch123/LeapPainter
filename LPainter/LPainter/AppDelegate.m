@@ -38,4 +38,8 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)savePainting:(id)sender {
+    [self.masterViewController savePaperView];
+}
+
 @end

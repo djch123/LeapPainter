@@ -125,4 +125,14 @@
     [self setNeedsDisplay:YES];
 }
 
+- (void) savePainting {
+    [self lockFocus];
+    NSBitmapImageRep* rep = [self bitmapImageRepForCachingDisplayInRect:self.bounds];
+    [self cacheDisplayInRect:self.bounds toBitmapImageRep:rep];
+    [self unlockFocus];
+    NSData *data;
+    data = [rep representationUsingType:NSJPEGFileType properties:nil];
+    [data writeToFile:@"/Users/Jessie/Desktop/test.jpeg" atomically:YES];
+}
+
 @end

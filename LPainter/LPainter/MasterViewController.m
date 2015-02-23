@@ -177,4 +177,7 @@
     return [NSNumber numberWithFloat:width];
 }
 
+- (void) savePaperView {
+    [paperView savePainting];
+}
 @end

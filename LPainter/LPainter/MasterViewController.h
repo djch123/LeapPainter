@@ -19,7 +19,6 @@
 #define PROGRESS_TO_WIDTH_CONSTANT (.02)
 #define DEFAULT_COLOR blackColor
 #define DEFAULT_MOUSE_ALPHA (.5)
-#define OUT_OF_RANGE_BOUND (.001)
 
 @interface MasterViewController : NSViewController{
     PaperView* paperView;
@@ -35,5 +34,6 @@
 - (void) leapCircleGesture:(NSNotification*) notification;
 - (void) leapStateChanged:(NSNotification*) notification;
 - (NSNumber*) getNewWidth:(NSNumber*) delta_width;
+- (void) savePaperView;
 
 @end

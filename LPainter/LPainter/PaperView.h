@@ -21,5 +21,6 @@
 - (void) colorChanged:(NSColor*) color;
 - (void) widthChanged:(NSNumber*) width;
 - (void) clear;
+- (void) savePainting;
 
 @end
