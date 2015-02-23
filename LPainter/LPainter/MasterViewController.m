@@ -54,7 +54,17 @@
 
 - (void) leapPositionChanged:(NSNotification*) notification{
     LeapVector *position = notification.object; // normalized coordinate
-
+    if ([position x]<OUT_OF_RANGE_BOUND ||
+        [position x]>(1-OUT_OF_RANGE_BOUND) ||
+        [position y]<OUT_OF_RANGE_BOUND ||
+        [position y]>(1-OUT_OF_RANGE_BOUND) ||
+        [position z]<OUT_OF_RANGE_BOUND ||
+        [position z]>(1-OUT_OF_RANGE_BOUND)) {
+        [mouseView leapMouseMoved:nil];
+        [paperView addPoint:nil];
+        return;
+    }
+    
     NSPoint p;
     int appWidth = [[self view] bounds].size.width;
     int appHeight =[[self view] bounds].size.height;
