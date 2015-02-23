@@ -52,7 +52,8 @@
     NSBezierPath *path3;  // huge gray circle with unfixed size
     path3 = [NSBezierPath bezierPath];
     
-    [[NSColor grayColor] set];
+    if ([mouse z]<.5) [[NSColor grayColor] set];
+    else [[NSColor blackColor] set];
     [path3 appendBezierPathWithArcWithCenter:center radius:[self getHugeCircleRadius] startAngle:0 endAngle:360];
     [path3 stroke];
 }
