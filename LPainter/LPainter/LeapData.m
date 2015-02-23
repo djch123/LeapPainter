@@ -28,6 +28,7 @@
     };
     fingerNames = [[NSArray alloc] initWithObjects:fingerNamesInit count:5];
     boneNames = [[NSArray alloc] initWithObjects:boneNamesInit count:4];
+
     return self;
 }
 
@@ -35,49 +36,30 @@
 {
     controller = [[LeapController alloc] init];
     [controller addListener:self];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"running"];
 }
 
 
 #pragma mark - SampleListener Callbacks
 
-- (void)onInit:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Initialized"];
-}
-
 - (void)onConnect:(NSNotification *)notification
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Connected"];
     LeapController *aController = (LeapController *)[notification object];
     [aController enableGesture:LEAP_GESTURE_TYPE_CIRCLE enable:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapConnected" object:nil];
 }
 
 - (void)onDisconnect:(NSNotification *)notification
 {
     //Note: not dispatched when running in a debugger.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Disconnected"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapDisconnected" object:nil];
 }
 
 - (void)onServiceConnect:(NSNotification *)notification
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Service Connected"];
-}
-
-- (void)onServiceDisconnect:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Service Disconnected"];
-}
-
-- (void)onDeviceChange:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Device Changed"];
-}
-
-- (void)onExit:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Exited"];
+    if (!controller.isConnected) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"leapDisconnected" object:nil];
+    }
 }
 
 - (void)onFrame:(NSNotification *)notification
@@ -120,20 +102,9 @@
                 break;
             }
             default:
-                NSLog(@"  Unknown gesture type");
                 break;
         }
     }
-}
-
-- (void)onFocusGained:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Focus Gained"];
-}
-
-- (void)onFocusLost:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"leapStateChanged" object:@"Focus Lost"];
 }
 
 + (NSString *)stringForState:(LeapGestureState)state

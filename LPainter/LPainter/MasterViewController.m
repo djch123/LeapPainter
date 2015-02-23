@@ -21,11 +21,16 @@
     colorViews = [[NSMutableArray alloc] init];
     nowWidth = [NSNumber numberWithFloat:DEFAULT_LINE_WIDTH];
     
+    alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Leap Motion is not connected! Please plug in the device."];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    
     [self getAllViews];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leapPositionChanged:) name:@"leapPositionChanged" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leapCircleGesture:) name:@"leapCircleGesture" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leapStateChanged:) name:@"leapStateChanged" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leapDisconnected) name:@"leapDisconnected" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leapConnected) name:@"leapConnected" object:nil];
 }
 
 - (void)viewDidLoad {
@@ -45,9 +50,6 @@
             penView = (PenView*) subView;
         }
         else if ([subView isKindOfClass:[MouseView class]]){            mouseView = (MouseView*) subView;
-        }
-        else if ([subView isKindOfClass:[StateTextField class]]){
-            stateText = (StateTextField*) subView;
         }
     }
 }
@@ -163,11 +165,6 @@
     
 }
 
-- (void) leapStateChanged:(NSNotification*) notification {
-    NSString *state = notification.object;
-    stateText.stringValue = state;
-}
-
 - (NSNumber*) getNewWidth:(NSNumber*) delta_width {
     CGFloat width;
     width = [delta_width floatValue] + [nowWidth floatValue];
@@ -180,4 +177,13 @@
 - (void) savePaperView {
     [paperView savePainting];
 }
+
+- (void) leapDisconnected {
+    [alert runModal];
+}
+
+- (void) leapConnected {
+    [NSApp endSheet: [alert window]];
+}
+
 @end

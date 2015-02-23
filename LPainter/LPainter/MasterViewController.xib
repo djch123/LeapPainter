@@ -84,18 +84,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="AnW-49-2cO" customClass="StateTextField">
-                    <rect key="frame" x="570" y="440" width="140" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <shadow key="shadow" blurRadius="10">
-                        <color key="color" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </shadow>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Init..." id="goS-mx-vE9">
-                        <font key="font" metaFont="system" size="15"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3KX-4c-dy3">
                     <rect key="frame" x="25" y="19" width="49" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

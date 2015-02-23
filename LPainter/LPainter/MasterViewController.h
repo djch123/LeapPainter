@@ -10,7 +10,6 @@
 #import "PaperView.h"
 #import "PenView.h"
 #import "MouseView.h"
-#import "StateTextField.h"
 
 #define MAX_CIRCLE_RADIUS (11)
 #define DEFAULT_LINE_WIDTH (5)
@@ -25,15 +24,16 @@
     NSMutableArray* colorViews;
     PenView* penView;
     MouseView* mouseView;
-    StateTextField* stateText;
     NSNumber* nowWidth;
+    NSAlert *alert;
 }
 
 - (void) getAllViews;
 - (void) leapPositionChanged:(NSNotification*) notification;
 - (void) leapCircleGesture:(NSNotification*) notification;
-- (void) leapStateChanged:(NSNotification*) notification;
 - (NSNumber*) getNewWidth:(NSNumber*) delta_width;
 - (void) savePaperView;
+- (void) leapDisconnected;
+- (void) leapConnected;
 
 @end

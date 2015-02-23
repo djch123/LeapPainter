@@ -22,7 +22,6 @@
 		40CFB0F01A94D90600E1DFA4 /* PenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0EF1A94D90600E1DFA4 /* PenView.m */; };
 		40CFB0F31A94D94100E1DFA4 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0F21A94D94100E1DFA4 /* ColorView.m */; };
 		40CFB0F61A94D9A900E1DFA4 /* MouseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0F51A94D9A900E1DFA4 /* MouseView.m */; };
-		40CFB0FC1A94F7BD00E1DFA4 /* StateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0FB1A94F7BD00E1DFA4 /* StateTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +76,6 @@
 		40CFB0F21A94D94100E1DFA4 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
 		40CFB0F41A94D9A900E1DFA4 /* MouseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MouseView.h; sourceTree = "<group>"; };
 		40CFB0F51A94D9A900E1DFA4 /* MouseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MouseView.m; sourceTree = "<group>"; };
-		40CFB0FA1A94F7BD00E1DFA4 /* StateTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateTextField.h; sourceTree = "<group>"; };
-		40CFB0FB1A94F7BD00E1DFA4 /* StateTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +127,6 @@
 				40CFB0CC1A93767700E1DFA4 /* MasterViewController.h */,
 				40CFB0CD1A93767700E1DFA4 /* MasterViewController.m */,
 				40CFB0CE1A93767700E1DFA4 /* MasterViewController.xib */,
-				40CFB0FA1A94F7BD00E1DFA4 /* StateTextField.h */,
-				40CFB0FB1A94F7BD00E1DFA4 /* StateTextField.m */,
 				40CFB0F41A94D9A900E1DFA4 /* MouseView.h */,
 				40CFB0F51A94D9A900E1DFA4 /* MouseView.m */,
 				40CFB0F11A94D94100E1DFA4 /* ColorView.h */,
@@ -296,7 +291,6 @@
 				40CFB0F31A94D94100E1DFA4 /* ColorView.m in Sources */,
 				40CFB0D61A937D0000E1DFA4 /* LeapData.m in Sources */,
 				40CFB0E71A937D3F00E1DFA4 /* LeapObjectiveC.mm in Sources */,
-				40CFB0FC1A94F7BD00E1DFA4 /* StateTextField.m in Sources */,
 				40CFB0B21A9375A300E1DFA4 /* main.m in Sources */,
 				40CFB0D31A93770D00E1DFA4 /* PaperView.m in Sources */,
 				40CFB0CF1A93767700E1DFA4 /* MasterViewController.m in Sources */,
