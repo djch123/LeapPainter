@@ -18,6 +18,7 @@
 #define PROGRESS_TO_WIDTH_CONSTANT (.02)
 #define DEFAULT_COLOR blackColor
 #define DEFAULT_MOUSE_ALPHA (.5)
+#define DEFAULT_SAVE_NAME_MODULE @"LPainting%08ld.jpeg"
 
 @interface MasterViewController : NSViewController{
     PaperView* paperView;

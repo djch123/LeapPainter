@@ -126,13 +126,28 @@
 }
 
 - (void) savePainting {
-    [self lockFocus];
-    NSBitmapImageRep* rep = [self bitmapImageRepForCachingDisplayInRect:self.bounds];
-    [self cacheDisplayInRect:self.bounds toBitmapImageRep:rep];
-    [self unlockFocus];
-    NSData *data;
-    data = [rep representationUsingType:NSJPEGFileType properties:nil];
-    [data writeToFile:@"/Users/Jessie/Desktop/test.jpeg" atomically:YES];
+    NSSavePanel *savePanel;
+    NSArray *fileTypes;
+    NSString *defaultName;
+    long rand;
+    
+    rand = ((double) random())/RAND_MAX *99999999;
+    defaultName = [[NSString alloc] initWithFormat:DEFAULT_SAVE_NAME_MODULE, rand];
+    fileTypes = [[NSArray alloc] initWithObjects:@"jpeg", @"png", nil];
+    savePanel = [[NSSavePanel alloc] init];
+    [savePanel setAllowedFileTypes:fileTypes];
+    [savePanel setNameFieldStringValue:defaultName];
+    
+    if ( [savePanel runModal] == NSModalResponseOK ) {
+        [self lockFocus];
+        NSBitmapImageRep* rep = [self bitmapImageRepForCachingDisplayInRect:self.bounds];
+        [self cacheDisplayInRect:self.bounds toBitmapImageRep:rep];
+        [self unlockFocus];
+        
+        NSData *data;
+        data = [rep representationUsingType:NSJPEGFileType properties:nil];
+        [data writeToFile:[[savePanel URL] path] atomically:NO];
+    }
 }
 
 @end
