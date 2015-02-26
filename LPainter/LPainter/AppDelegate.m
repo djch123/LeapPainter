@@ -42,4 +42,10 @@
     [self.masterViewController savePaperView];
 }
 
+- (BOOL)windowShouldClose:(id)sender
+{
+    [self.masterViewController askSaveOrNot];
+    return YES;
+}
+
 @end

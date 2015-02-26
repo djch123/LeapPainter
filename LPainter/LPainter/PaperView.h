@@ -15,6 +15,8 @@
     
     NSColor *nowColor;
     NSNumber *nowWidth;
+    
+    BOOL changed;
 }
 
 - (void) addPoint:(LeapVector*) position;
@@ -22,5 +24,6 @@
 - (void) widthChanged:(NSNumber*) width;
 - (void) clear;
 - (void) savePainting;
+- (BOOL) isChanged;
 
 @end

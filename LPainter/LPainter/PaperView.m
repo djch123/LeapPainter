@@ -22,6 +22,7 @@
     nowColor = [NSColor DEFAULT_COLOR];
     nowWidth = [NSNumber numberWithFloat:DEFAULT_LINE_WIDTH];
     nowLine = nil;
+    changed = NO;
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -93,6 +94,7 @@
             [lines addObject:nowLine];
 
             nowLine = nil;
+            changed = YES;
         }
     }
     else{
@@ -103,6 +105,7 @@
         else{
             [nowLine addObject:position];
         }
+        changed = YES;
         [self setNeedsDisplay:YES];
     }
 }
@@ -147,7 +150,13 @@
         NSData *data;
         data = [rep representationUsingType:NSJPEGFileType properties:nil];
         [data writeToFile:[[savePanel URL] path] atomically:NO];
+        
+        changed = NO;
     }
+}
+
+- (BOOL) isChanged{
+    return changed;
 }
 
 @end

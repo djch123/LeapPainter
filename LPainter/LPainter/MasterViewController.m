@@ -186,4 +186,17 @@
     [NSApp endSheet: [alert window]];
 }
 
+- (void) askSaveOrNot {
+    if ([paperView isChanged]) {
+        NSAlert *saveAlert = [[NSAlert alloc] init];
+        [saveAlert addButtonWithTitle:@"Save"];
+        [saveAlert addButtonWithTitle:@"Cancle"];
+        [saveAlert setMessageText:@"Do you want to save your painting?"];
+        [saveAlert setInformativeText:@"Your painting has been changed."];
+        if ([saveAlert runModal]==NSAlertFirstButtonReturn) {
+            [paperView savePainting];
+        }
+    }
+}
+
 @end

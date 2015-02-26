@@ -36,5 +36,6 @@
 - (void) savePaperView;
 - (void) leapDisconnected;
 - (void) leapConnected;
+- (void) askSaveOrNot;
 
 @end

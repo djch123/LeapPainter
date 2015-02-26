@@ -676,6 +676,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="pKK-I2-dBE"/>
+            </connections>
         </window>
     </objects>
 </document>
