@@ -71,8 +71,24 @@
     LeapInteractionBox *iBox = frame.interactionBox;
 
     // Get hands
+    if ([frame.hands count] <= 0) {
+        handState = NO_HAND;
+    }
+    if ([frame.hands count] == 2 && handState == NO_HAND) {
+        handState = RIGHT_HAND;
+    }
+    if ([frame.hands count] == 1) {
+        LeapHand *hand= [frame.hands objectAtIndex:0];
+        if (hand.isLeft) {
+            handState = LEFT_HAND;
+        }
+        else{
+            handState = RIGHT_HAND;
+        }
+    }
     for (LeapHand *hand in frame.hands) {
-        if (hand.isLeft) continue;
+        if (!hand.isLeft && handState != RIGHT_HAND) continue;
+        if (hand.isLeft && handState != LEFT_HAND) continue;
         
         for (LeapFinger *finger in hand.fingers) {
             if ([[fingerNames objectAtIndex:finger.type]  isEqual: @"Index finger"]){
@@ -91,6 +107,28 @@
         switch (gesture.type) {
             case LEAP_GESTURE_TYPE_CIRCLE: {
                 LeapCircleGesture *circleGesture = (LeapCircleGesture *)gesture;
+                
+                // process only index finger gesture
+                NSArray *pointableList = gesture.pointables;
+                if (pointableList != nil) {
+                    LeapPointable *pointable;
+                    pointable = [pointableList objectAtIndex:0];
+                    if (pointable.isFinger) {
+                        LeapFinger *finger = (LeapFinger *) pointable;
+                        LeapHand *hand = finger.hand;
+                        if (hand.isLeft && handState != LEFT_HAND) {
+                            continue;
+                        }
+                        if (!hand.isLeft && handState != RIGHT_HAND) {
+                            continue;
+                        }
+                        if (finger.type != 1) {
+                            // not index finger
+                            continue;
+                        }
+                    }
+                }
+                
                 LeapVector *center = [circleGesture center];
                 LeapVector *normalizedCenter = [iBox normalizePoint:center clamp:YES];
                 NSMutableArray *message;

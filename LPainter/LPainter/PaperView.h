@@ -14,6 +14,7 @@
     NSMutableArray *nowLine;
     
     NSColor *nowColor;
+    NSColor *backgroundColor;
     NSNumber *nowWidth;
     
     BOOL changed;
@@ -26,5 +27,6 @@
 - (void) widthChanged:(NSNumber*) width;
 - (void) clear;
 - (void) savePainting;
+- (void) backgroundColorChanged:(NSColor*) color;
 
 @end

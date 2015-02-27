@@ -22,6 +22,7 @@
 -(void) awakeFromNib{
     lines = [[NSMutableArray alloc] init];
     nowColor = [NSColor DEFAULT_COLOR];
+    backgroundColor = [NSColor DEFAULT_BACKGROUND_COLOR];
     nowWidth = [NSNumber numberWithFloat:DEFAULT_LINE_WIDTH];
     nowLine = nil;
     changed = NO;
@@ -31,7 +32,7 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
-    [[NSColor whiteColor] set];
+    [backgroundColor set];
     NSRectFill(dirtyRect);
     
     NSColor *c;
@@ -156,6 +157,11 @@
         
         changed = NO;
     }
+}
+
+- (void) backgroundColorChanged:(NSColor*) color {
+    backgroundColor = color;
+    [self setNeedsDisplay:YES];
 }
 
 @end

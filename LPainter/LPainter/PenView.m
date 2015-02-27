@@ -27,17 +27,24 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
-    NSBezierPath *path;
-    path = [NSBezierPath bezierPath];
-    
     NSPoint center;
     center.x = [self bounds].size.width/2;
     center.y = [self bounds].size.height/2;
     
+    NSBezierPath *path1;
+    path1 = [NSBezierPath bezierPath];
+    
     [nowColor set];
-    [path appendBezierPathWithArcWithCenter:center radius:[nowWidth floatValue]/2 startAngle:0 endAngle:360];
-    [path fill];
-    [path stroke];
+    [path1 appendBezierPathWithArcWithCenter:center radius:[nowWidth floatValue]/2 startAngle:0 endAngle:360];
+    [path1 fill];
+    [path1 stroke];
+    
+    NSBezierPath *path2;
+    path2 = [NSBezierPath bezierPath];
+    
+    [[NSColor grayColor] set];
+    [path2 appendBezierPathWithArcWithCenter:center radius:.5+[nowWidth floatValue]/2 startAngle:0 endAngle:360];
+    [path2 stroke];
 }
 
 - (void) colorChanged:(NSColor*) color {

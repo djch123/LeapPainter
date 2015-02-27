@@ -87,6 +87,9 @@
 - (CGFloat) getHugeCircleRadius {
     CGFloat z;
     z = [mouse z];
+    if (z<=.5 && [[nowColor colorUsingColorSpaceName:
+          NSCalibratedWhiteColorSpace] whiteComponent] == 1.0) return [nowWidth floatValue]/2 + 1;
+    
     if (z<=0.5) return [nowWidth floatValue]/2 + 1 + (-z+.5)*3*[nowWidth floatValue];
     return [nowWidth floatValue]/2 + 1 + (z-.5)*3*[nowWidth floatValue];
 }

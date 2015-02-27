@@ -93,20 +93,6 @@
     LeapVector *center = [message objectAtIndex:1];
     LeapCircleGesture *circleGesture = (LeapCircleGesture *) gesture;
     
-    // process only index finger gesture
-    NSArray *pointableList = gesture.pointables;
-    if (pointableList != nil) {
-        LeapPointable *pointable;
-        pointable = [pointableList objectAtIndex:0];
-        if (pointable.isFinger) {
-            LeapFinger *finger = (LeapFinger *) pointable;
-            if (finger.type != 1) {
-                // not index finger
-                return;
-            }
-        }
-    }
-    
     if (circleGesture.radius > MAX_CIRCLE_RADIUS) return;
     
     int appWidth = [[self view] bounds].size.width;
@@ -126,11 +112,9 @@
         if (CGRectContainsPoint(colorView.bounds, point)){
             NSColor *color = [colorView color];
             
-            if ([colorView.identifier isEqualToString:@"white"]) {
-                if ([[[circleGesture pointable] direction] angleTo:[circleGesture normal]] > LEAP_PI/2) {
-                    [paperView clear];
-                    return;
-                }
+            if ([[[circleGesture pointable] direction] angleTo:[circleGesture normal]] > LEAP_PI/2) {
+                [paperView backgroundColorChanged:color];
+                return;
             }
             
             // send new color to penView, MouseView, PaperView

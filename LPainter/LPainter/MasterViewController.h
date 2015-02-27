@@ -17,6 +17,7 @@
 #define MAX_LINE_WIDTH (38)
 #define PROGRESS_TO_WIDTH_CONSTANT (.02)
 #define DEFAULT_COLOR blackColor
+#define DEFAULT_BACKGROUND_COLOR whiteColor
 #define DEFAULT_MOUSE_ALPHA (.5)
 #define DEFAULT_SAVE_NAME_MODULE @"LPainting%08ld.jpeg"
 

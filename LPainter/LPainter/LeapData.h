@@ -9,7 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LeapObjectiveC.h"
 
-@interface LeapData : NSObject<LeapListener>
+#define LEFT_HAND 1
+#define RIGHT_HAND -1
+#define NO_HAND 0
+
+@interface LeapData : NSObject<LeapListener> {
+    int handState;
+}
 
 -(void) run;
 
