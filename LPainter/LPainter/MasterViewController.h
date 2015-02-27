@@ -38,5 +38,8 @@
 - (void) leapDisconnected;
 - (void) leapConnected;
 - (void) askSaveOrNot;
+- (void) clearPaper;
+- (void) undoPaper;
+- (void) redoPaper;
 
 @end

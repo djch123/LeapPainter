@@ -15,6 +15,9 @@
 @property (nonatomic, strong, readwrite)LeapData* leapData;
 
 - (IBAction)savePainting:(id)sender;
+- (IBAction)newPainting:(id)sender;
+- (IBAction)undoPainting:(id)sender;
+- (IBAction)redoPainting:(id)sender;
 
 @end
 

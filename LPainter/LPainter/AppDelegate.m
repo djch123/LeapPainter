@@ -42,6 +42,19 @@
     [self.masterViewController savePaperView];
 }
 
+- (IBAction)newPainting:(id)sender {
+    [self.masterViewController askSaveOrNot];
+    [self.masterViewController clearPaper];
+}
+
+- (IBAction)undoPainting:(id)sender {
+    [self.masterViewController undoPaper];
+}
+
+- (IBAction)redoPainting:(id)sender {
+    [self.masterViewController redoPaper];
+}
+
 - (BOOL)windowShouldClose:(id)sender
 {
     [self.masterViewController askSaveOrNot];

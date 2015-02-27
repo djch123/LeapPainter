@@ -12,6 +12,7 @@
 @interface PaperView : NSView{
     NSMutableArray *lines;
     NSMutableArray *nowLine;
+    NSMutableArray *removedLines;
     
     NSColor *nowColor;
     NSColor *backgroundColor;
@@ -26,6 +27,8 @@
 - (void) colorChanged:(NSColor*) color;
 - (void) widthChanged:(NSNumber*) width;
 - (void) clear;
+- (void) undo;
+- (void) redo;
 - (void) savePainting;
 - (void) backgroundColorChanged:(NSColor*) color;
 

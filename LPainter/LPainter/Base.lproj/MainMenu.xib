@@ -69,12 +69,12 @@
                         <items>
                             <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
-                                    <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
+                                    <action selector="newPainting:" target="Voe-Tx-rLC" id="f1h-ZB-0vJ"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                    <action selector="openDocument:" target="-1" id="Ukb-xK-yuz"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -133,12 +133,12 @@
                         <items>
                             <menuItem title="Undo" keyEquivalent="z" id="dRJ-4n-Yzg">
                                 <connections>
-                                    <action selector="undo:" target="-1" id="M6e-cu-g7V"/>
+                                    <action selector="undoPainting:" target="Voe-Tx-rLC" id="zgS-vo-iXI"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Redo" keyEquivalent="Z" id="6dh-zS-Vam">
                                 <connections>
-                                    <action selector="redo:" target="-1" id="oIA-Rs-6OD"/>
+                                    <action selector="redoPainting:" target="Voe-Tx-rLC" id="AIw-L9-wZt"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
@@ -666,7 +666,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="LPainter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="LPainter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="720" height="480"/>

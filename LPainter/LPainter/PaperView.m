@@ -21,6 +21,7 @@
 
 -(void) awakeFromNib{
     lines = [[NSMutableArray alloc] init];
+    removedLines = nil;
     nowColor = [NSColor DEFAULT_COLOR];
     backgroundColor = [NSColor DEFAULT_BACKGROUND_COLOR];
     nowWidth = [NSNumber numberWithFloat:DEFAULT_LINE_WIDTH];
@@ -92,6 +93,7 @@
 - (void) addPoint:(LeapVector*) position {
     if ( position == nil ){
         if ( nowLine != nil && [nowLine count]>=2 ){
+            
             [lines addObject:nowColor];
             [lines addObject:nowWidth];
             [lines addObject:nowLine];
@@ -109,6 +111,8 @@
             [nowLine addObject:position];
         }
         changed = YES;
+        removedLines = nil;
+        
         [self setNeedsDisplay:YES];
     }
 }
@@ -127,6 +131,54 @@
     [lines removeAllObjects];
     [nowLine removeAllObjects];
     nowLine = nil;
+    changed = NO;
+    
+    [self setNeedsDisplay:YES];
+}
+
+- (void) undo {
+    if ( nowLine == nil ) {
+        if ( [lines count] >=3 ) {
+            NSMutableArray *l = [lines lastObject];
+            [lines removeLastObject];
+            NSNumber *w = [lines lastObject];
+            [lines removeLastObject];
+            NSColor *c = [lines lastObject];
+            [lines removeLastObject];
+            
+            if (removedLines == nil) {
+                removedLines = [[NSMutableArray alloc] init];
+            }
+            [removedLines addObject:c];
+            [removedLines addObject:w];
+            [removedLines addObject:l];
+            
+            changed = YES;
+        }
+    }
+    else {
+        nowLine = nil;
+        changed = YES;
+    }
+    
+    [self setNeedsDisplay:YES];
+}
+
+- (void) redo {
+    if ([removedLines count] >=3) {
+        NSMutableArray *l = [removedLines lastObject];
+        [removedLines removeLastObject];
+        NSNumber *w = [removedLines lastObject];
+        [removedLines removeLastObject];
+        NSColor *c = [removedLines lastObject];
+        [removedLines removeLastObject];
+        
+        [lines addObject:c];
+        [lines addObject:w];
+        [lines addObject:l];
+        
+        changed = YES;
+    }
     
     [self setNeedsDisplay:YES];
 }

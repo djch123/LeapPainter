@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "LeapData.h"
 #import "LeapObjectiveC.h"
+#import "ColorWellView.h"
 
 @interface MasterViewController ()
 
@@ -42,7 +43,7 @@
         if ([subView isKindOfClass:[PaperView class]]){
             paperView = (PaperView*)subView;
         }
-        else if ([subView isKindOfClass:[NSColorWell class]]){
+        else if ([subView isKindOfClass:[ColorWellView class]]){
             [colorViews addObject:subView];
         }
         else if ([subView isKindOfClass:[PenView class]]){
@@ -87,7 +88,6 @@
 }
 
 - (void) leapCircleGesture:(NSNotification*) notification{
-    
     NSMutableArray *message = notification.object;
     LeapGesture *gesture = [message objectAtIndex:0];
     LeapVector *center = [message objectAtIndex:1];
@@ -106,7 +106,7 @@
     c.y = [center y];
     
     // color changes
-    for (NSColorWell *colorView in colorViews){
+    for (ColorWellView *colorView in colorViews){
         NSPoint point;
         point = [self.view convertPoint:c toView:colorView];
         if (CGRectContainsPoint(colorView.bounds, point)){
@@ -121,7 +121,6 @@
             [penView colorChanged:color];
             [mouseView colorChanged:color];
             [paperView colorChanged:color];
-            
             return;
         }
     }
@@ -180,6 +179,18 @@
             [paperView savePainting];
         }
     }
+}
+
+- (void) clearPaper {
+    [paperView clear];
+}
+
+- (void) undoPaper {
+    [paperView undo];
+}
+
+- (void) redoPaper {
+    [paperView redo];
 }
 
 @end
