@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 #import "LeapData.h"
-#import "ColorView.h"
 #import "LeapObjectiveC.h"
 
 @interface MasterViewController ()
@@ -43,7 +42,7 @@
         if ([subView isKindOfClass:[PaperView class]]){
             paperView = (PaperView*)subView;
         }
-        else if ([subView isKindOfClass:[ColorView class]]){
+        else if ([subView isKindOfClass:[NSColorWell class]]){
             [colorViews addObject:subView];
         }
         else if ([subView isKindOfClass:[PenView class]]){
@@ -121,7 +120,7 @@
     c.y = [center y];
     
     // color changes
-    for (ColorView *colorView in colorViews){
+    for (NSColorWell *colorView in colorViews){
         NSPoint point;
         point = [self.view convertPoint:c toView:colorView];
         if (CGRectContainsPoint(colorView.bounds, point)){

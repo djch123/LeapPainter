@@ -20,7 +20,6 @@
 		40CFB0E81A937D3F00E1DFA4 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */; };
 		40CFB0ED1A937D6100E1DFA4 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		40CFB0F01A94D90600E1DFA4 /* PenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0EF1A94D90600E1DFA4 /* PenView.m */; };
-		40CFB0F31A94D94100E1DFA4 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0F21A94D94100E1DFA4 /* ColorView.m */; };
 		40CFB0F61A94D9A900E1DFA4 /* MouseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CFB0F51A94D9A900E1DFA4 /* MouseView.m */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +71,6 @@
 		40CFB0DE1A937D3F00E1DFA4 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libLeap.dylib; sourceTree = "<group>"; };
 		40CFB0EE1A94D90600E1DFA4 /* PenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenView.h; sourceTree = "<group>"; };
 		40CFB0EF1A94D90600E1DFA4 /* PenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenView.m; sourceTree = "<group>"; };
-		40CFB0F11A94D94100E1DFA4 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
-		40CFB0F21A94D94100E1DFA4 /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
 		40CFB0F41A94D9A900E1DFA4 /* MouseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MouseView.h; sourceTree = "<group>"; };
 		40CFB0F51A94D9A900E1DFA4 /* MouseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MouseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +126,6 @@
 				40CFB0CE1A93767700E1DFA4 /* MasterViewController.xib */,
 				40CFB0F41A94D9A900E1DFA4 /* MouseView.h */,
 				40CFB0F51A94D9A900E1DFA4 /* MouseView.m */,
-				40CFB0F11A94D94100E1DFA4 /* ColorView.h */,
-				40CFB0F21A94D94100E1DFA4 /* ColorView.m */,
 				40CFB0EE1A94D90600E1DFA4 /* PenView.h */,
 				40CFB0EF1A94D90600E1DFA4 /* PenView.m */,
 				40CFB0D11A93770D00E1DFA4 /* PaperView.h */,
@@ -288,7 +283,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CFB0F31A94D94100E1DFA4 /* ColorView.m in Sources */,
 				40CFB0D61A937D0000E1DFA4 /* LeapData.m in Sources */,
 				40CFB0E71A937D3F00E1DFA4 /* LeapObjectiveC.mm in Sources */,
 				40CFB0B21A9375A300E1DFA4 /* main.m in Sources */,

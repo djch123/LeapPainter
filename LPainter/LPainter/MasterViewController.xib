@@ -29,57 +29,57 @@
                         <color key="color" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                     </shadow>
                 </customView>
-                <colorWell id="KK6-u5-VoI" userLabel="Black" customClass="ColorView">
+                <colorWell id="KK6-u5-VoI" userLabel="Black">
                     <rect key="frame" x="5" y="410" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="hEs-7R-gjy" userLabel="Blue" customClass="ColorView">
+                <colorWell id="hEs-7R-gjy" userLabel="Blue">
                     <rect key="frame" x="70" y="410" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="2kG-Ce-rk9" userLabel="Brown" customClass="ColorView">
+                <colorWell id="2kG-Ce-rk9" userLabel="Brown">
                     <rect key="frame" x="5" y="345" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="oT2-Dl-6cX" userLabel="Cyan" customClass="ColorView">
+                <colorWell id="oT2-Dl-6cX" userLabel="Cyan">
                     <rect key="frame" x="70" y="345" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="evB-4G-1Qd" userLabel="Green" customClass="ColorView">
+                <colorWell id="evB-4G-1Qd" userLabel="Green">
                     <rect key="frame" x="5" y="280" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="IY5-tv-ZZi" userLabel="Magenta" customClass="ColorView">
+                <colorWell id="IY5-tv-ZZi" userLabel="Magenta">
                     <rect key="frame" x="70" y="280" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="BVk-eb-dRz" userLabel="Orange" customClass="ColorView">
+                <colorWell id="BVk-eb-dRz" userLabel="Orange">
                     <rect key="frame" x="5" y="215" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="KcK-7q-SzG" userLabel="Purple" customClass="ColorView">
+                <colorWell id="KcK-7q-SzG" userLabel="Purple">
                     <rect key="frame" x="70" y="215" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="pbo-2K-ZQu" userLabel="Red" customClass="ColorView">
+                <colorWell id="pbo-2K-ZQu" userLabel="Red">
                     <rect key="frame" x="5" y="150" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell id="G7D-JU-tVK" userLabel="Yellow" customClass="ColorView">
+                <colorWell id="G7D-JU-tVK" userLabel="Yellow">
                     <rect key="frame" x="70" y="150" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
-                <colorWell identifier="white" id="LbT-Za-TLm" userLabel="White" customClass="ColorView">
+                <colorWell identifier="white" id="LbT-Za-TLm" userLabel="White">
                     <rect key="frame" x="5" y="85" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
