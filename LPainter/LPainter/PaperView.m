@@ -10,6 +10,8 @@
 #import "MasterViewController.h"
 
 @implementation PaperView
+@synthesize changed;
+
 - (id)initWithFrame:(NSRect)frameRect{
     if(self=[super initWithFrame:frameRect]){
         [self awakeFromNib];
@@ -134,6 +136,7 @@
     NSString *defaultName;
     long rand;
     
+    srandom((unsigned int)time(NULL));
     rand = ((double) random())/RAND_MAX *99999999;
     defaultName = [[NSString alloc] initWithFormat:DEFAULT_SAVE_NAME_MODULE, rand];
     fileTypes = [[NSArray alloc] initWithObjects:@"jpeg", @"png", nil];
@@ -153,10 +156,6 @@
         
         changed = NO;
     }
-}
-
-- (BOOL) isChanged{
-    return changed;
 }
 
 @end

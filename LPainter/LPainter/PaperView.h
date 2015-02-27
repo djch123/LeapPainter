@@ -19,11 +19,12 @@
     BOOL changed;
 }
 
+@property BOOL changed;
+
 - (void) addPoint:(LeapVector*) position;
 - (void) colorChanged:(NSColor*) color;
 - (void) widthChanged:(NSNumber*) width;
 - (void) clear;
 - (void) savePainting;
-- (BOOL) isChanged;
 
 @end
