@@ -21,6 +21,7 @@
 
 -(void) awakeFromNib{
     lines = [[NSMutableArray alloc] init];
+    [lines addObject:[NSColor DEFAULT_BACKGROUND_COLOR]];
     removedLines = nil;
     nowColor = [NSColor DEFAULT_COLOR];
     backgroundColor = [NSColor DEFAULT_BACKGROUND_COLOR];
@@ -40,10 +41,15 @@
     NSNumber *w;
     NSPoint p;
     
-    for (int i=2; i<[lines count]; i+=3){
-        c = [lines objectAtIndex:i-2];
-        w = [lines objectAtIndex:i-1];
-        NSMutableArray *line = [lines objectAtIndex:i];
+    for (int i=0; i<[lines count]; ++i){
+        if ([[lines objectAtIndex:i] isKindOfClass:[NSColor class]]) {
+            continue;
+        }
+        
+        NSMutableArray *lineWithProperty = [lines objectAtIndex:i];
+        c = [lineWithProperty objectAtIndex:0];
+        w = [lineWithProperty objectAtIndex:1];
+        NSMutableArray *line = [lineWithProperty objectAtIndex:2];
         
         [c set];
         
@@ -93,10 +99,15 @@
 - (void) addPoint:(LeapVector*) position {
     if ( position == nil ){
         if ( nowLine != nil && [nowLine count]>=2 ){
+            [[NSSound soundNamed:@"Pop"] play];
             
-            [lines addObject:nowColor];
-            [lines addObject:nowWidth];
-            [lines addObject:nowLine];
+            NSMutableArray *lineWithProperty;
+            lineWithProperty = [[NSMutableArray alloc] init];
+            [lineWithProperty addObject:nowColor];
+            [lineWithProperty addObject:nowWidth];
+            [lineWithProperty addObject:nowLine];
+            
+            [lines addObject:lineWithProperty];
 
             nowLine = nil;
             changed = YES;
@@ -104,6 +115,8 @@
     }
     else{
         if (nowLine == nil) {
+            [[NSSound soundNamed:@"Morse"] play];
+            
             nowLine = [[NSMutableArray alloc] init];
             [nowLine addObject:position];
         }
@@ -118,7 +131,10 @@
 }
 
 - (void) colorChanged:(NSColor*) color {
-    nowColor = color;
+    if (![color isEqual:nowColor]) {
+        nowColor = color;
+        [[NSSound soundNamed:@"Morse"] play];
+    }
     [self setNeedsDisplay:YES];
 }
 
@@ -128,32 +144,40 @@
 }
 
 - (void) clear {
+    [[NSSound soundNamed:@"Frog"] play];
     [lines removeAllObjects];
+    [lines addObject:[NSColor DEFAULT_BACKGROUND_COLOR]];
     [nowLine removeAllObjects];
+    [removedLines removeAllObjects];
     nowLine = nil;
     changed = NO;
+    backgroundColor = [NSColor DEFAULT_BACKGROUND_COLOR];
     
     [self setNeedsDisplay:YES];
 }
 
 - (void) undo {
     if ( nowLine == nil ) {
-        if ( [lines count] >=3 ) {
-            NSMutableArray *l = [lines lastObject];
-            [lines removeLastObject];
-            NSNumber *w = [lines lastObject];
-            [lines removeLastObject];
-            NSColor *c = [lines lastObject];
-            [lines removeLastObject];
-            
+        if ( [lines count] >1 ) {
+            if ([[lines lastObject] isKindOfClass:[NSColor class]]) {
+                for (int i=(int)[lines count]-2; i>=0; --i) {
+                    if ([[lines objectAtIndex:i] isKindOfClass:[NSColor class]]) {
+                        backgroundColor = [lines objectAtIndex:i];
+                        break;
+                    }
+                }
+            }
             if (removedLines == nil) {
                 removedLines = [[NSMutableArray alloc] init];
             }
-            [removedLines addObject:c];
-            [removedLines addObject:w];
-            [removedLines addObject:l];
+            [removedLines addObject:[lines lastObject]];
+            if ([lines count] >1) [lines removeLastObject];
             
+            [[NSSound soundNamed:@"Morse"] play];
             changed = YES;
+        }
+        else {
+            [[NSSound soundNamed:@"Funk"] play];
         }
     }
     else {
@@ -165,25 +189,27 @@
 }
 
 - (void) redo {
-    if ([removedLines count] >=3) {
-        NSMutableArray *l = [removedLines lastObject];
-        [removedLines removeLastObject];
-        NSNumber *w = [removedLines lastObject];
-        [removedLines removeLastObject];
-        NSColor *c = [removedLines lastObject];
+    if ([removedLines count] >0) {
+        if ([[removedLines lastObject] isKindOfClass:[NSColor class]]) {
+            backgroundColor = [removedLines lastObject];
+        }
+        
+        [lines addObject:[removedLines lastObject]];
         [removedLines removeLastObject];
         
-        [lines addObject:c];
-        [lines addObject:w];
-        [lines addObject:l];
-        
+        [[NSSound soundNamed:@"Pop"] play];
         changed = YES;
+        
+        [self setNeedsDisplay:YES];
     }
-    
-    [self setNeedsDisplay:YES];
+    else{
+        [[NSSound soundNamed:@"Funk"] play];
+    }
 }
 
 - (void) savePainting {
+    [[NSSound soundNamed:@"Bottle"] play];
+    
     NSSavePanel *savePanel;
     NSArray *fileTypes;
     NSString *defaultName;
@@ -212,7 +238,11 @@
 }
 
 - (void) backgroundColorChanged:(NSColor*) color {
-    backgroundColor = color;
+    if (![color isEqual:backgroundColor]) {
+        [[NSSound soundNamed:@"Pop"] play];
+        backgroundColor = color;
+        [lines addObject:backgroundColor];
+    }
     [self setNeedsDisplay:YES];
 }
 

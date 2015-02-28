@@ -22,6 +22,8 @@
 @synthesize leapData = _leapData;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [NSSound soundNamed:@"Blow"];
+    
     // Insert code here to initialize your application
     // 1. Create the master View Controller
     self.masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
@@ -39,12 +41,11 @@
 }
 
 - (IBAction)savePainting:(id)sender {
-    [self.masterViewController savePaperView];
+    [self.masterViewController savePaper];
 }
 
 - (IBAction)newPainting:(id)sender {
-    [self.masterViewController askSaveOrNot];
-    [self.masterViewController clearPaper];
+    [self.masterViewController newPaper];
 }
 
 - (IBAction)undoPainting:(id)sender {

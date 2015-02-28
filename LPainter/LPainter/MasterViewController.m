@@ -19,10 +19,12 @@
 
 - (void) awakeFromNib{
     colorViews = [[NSMutableArray alloc] init];
+    iconViews = [[NSMutableArray alloc] init];
     nowWidth = [NSNumber numberWithFloat:DEFAULT_LINE_WIDTH];
+    timer = [[NSDate alloc] init];
     
     alert = [[NSAlert alloc] init];
-    [alert setMessageText:@"Leap Motion is not connected! Please plug in the device."];
+    [alert setMessageText:@"Leap Motion is not detected. Please plug in the device."];
     [alert setAlertStyle:NSWarningAlertStyle];
     
     [self getAllViews];
@@ -44,12 +46,15 @@
             paperView = (PaperView*)subView;
         }
         else if ([subView isKindOfClass:[ColorWellView class]]){
-            [colorViews addObject:subView];
+            [colorViews addObject:(ColorWellView*)subView];
         }
         else if ([subView isKindOfClass:[PenView class]]){
             penView = (PenView*) subView;
         }
         else if ([subView isKindOfClass:[MouseView class]]){            mouseView = (MouseView*) subView;
+        }
+        else if ([subView isKindOfClass:[NSImageView class]]){
+            [iconViews addObject:(NSImageView*)subView];
         }
     }
 }
@@ -125,6 +130,37 @@
         }
     }
     
+    NSDate *now;
+    now = [[NSDate alloc] init];
+    if ( [now timeIntervalSinceDate:timer] >= CLICK_INTERVAL ) {
+        timer = now;
+        
+        // icon clicks
+        for (NSImageView *iconView in iconViews) {
+            NSPoint point;
+            point = [self.view convertPoint:c toView:iconView];
+            if (CGRectContainsPoint(iconView.bounds, point)) {
+                if ([iconView.identifier isEqualToString:NEW]) {
+                    [self newPaper];
+                }
+                else if ([iconView.identifier isEqualToString:REFRESH]) {
+                    [self clearPaper];
+                }
+                else if ([iconView.identifier isEqualToString:UNDO]) {
+                    [self undoPaper];
+                }
+                else if ([iconView.identifier isEqualToString:REDO]) {
+                    [self redoPaper];
+                }
+                else if ([iconView.identifier isEqualToString:DOWNLOAD]) {
+                    [self savePaper];
+                }
+                
+                return;
+            }
+        }
+    }
+    
     // width changes
     NSPoint point;
     point = [self.view convertPoint:c toView:penView];
@@ -156,11 +192,8 @@
     return [NSNumber numberWithFloat:width];
 }
 
-- (void) savePaperView {
-    [paperView savePainting];
-}
-
 - (void) leapDisconnected {
+    [[NSSound soundNamed:@"Hero"] play];
     [alert runModal];
 }
 
@@ -175,10 +208,17 @@
         [saveAlert addButtonWithTitle:@"Cancle"];
         [saveAlert setMessageText:@"Do you want to save your painting?"];
         [saveAlert setInformativeText:@"Your painting has been changed."];
+        
+        [[NSSound soundNamed:@"Hero"] play];
         if ([saveAlert runModal] == NSAlertFirstButtonReturn) {
             [paperView savePainting];
         }
     }
+}
+
+- (void) newPaper {
+    [self askSaveOrNot];
+    [paperView clear];
 }
 
 - (void) clearPaper {
@@ -191,6 +231,10 @@
 
 - (void) redoPaper {
     [paperView redo];
+}
+
+- (void) savePaper {
+    [paperView savePainting];
 }
 
 @end

@@ -12,7 +12,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="800" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <customView id="hko-4b-Kjk" customClass="PaperView">
@@ -84,6 +84,31 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
+                <imageView identifier="new" id="XxW-g7-jXb" userLabel="new">
+                    <rect key="frame" x="723" y="368" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="new_icon_64px" id="pdl-hO-5Gp"/>
+                </imageView>
+                <imageView identifier="refresh" id="GAS-gf-iaf" userLabel="refresh">
+                    <rect key="frame" x="723" y="288" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="refresh_icon_64px" id="HZf-Ui-KPk"/>
+                </imageView>
+                <imageView identifier="undo" id="P7A-gk-Ce1" userLabel="undo">
+                    <rect key="frame" x="723" y="208" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="undo_icon_64px" id="R1e-e9-v90"/>
+                </imageView>
+                <imageView identifier="redo" id="SLE-Dm-jT1" userLabel="redo">
+                    <rect key="frame" x="723" y="128" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="redo_icon_64px" id="rr7-NX-JAd"/>
+                </imageView>
+                <imageView identifier="download" id="w9p-bk-6rH" userLabel="download">
+                    <rect key="frame" x="723" y="48" width="64" height="64"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="download_icon_64px" id="gsp-M7-Atj"/>
+                </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="3KX-4c-dy3">
                     <rect key="frame" x="25" y="19" width="49" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -94,10 +119,17 @@
                     </textFieldCell>
                 </textField>
                 <customView wantsLayer="YES" id="H01-hM-Ru6" customClass="MouseView">
-                    <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="800" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </customView>
             </subviews>
         </customView>
     </objects>
+    <resources>
+        <image name="download_icon_64px" width="64" height="64"/>
+        <image name="new_icon_64px" width="64" height="64"/>
+        <image name="redo_icon_64px" width="64" height="64"/>
+        <image name="refresh_icon_64px" width="64" height="64"/>
+        <image name="undo_icon_64px" width="64" height="64"/>
+    </resources>
 </document>
